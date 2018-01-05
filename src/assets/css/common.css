@@ -1,0 +1,17 @@
+/** webchatui common */
+*{box-sizing:border-box;}
+body{line-height:24px;font:14px Helvetica Neue,Helvetica,PingFang SC,\5FAE\8F6F\96C5\9ED1,Tahoma,Arial,sans-serif}
+img{display:inline-block;vertical-align:middle}
+h1,h2,h3,h4,h5,h6{font-weight:400}
+h4,h5,h6{font-size:100%}
+blockquote,body,button,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+a:active,a:hover{outline:0}
+img{border:none}
+li{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+button,input,optgroup,option,select,textarea{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}
+hr{height:1px;margin:10px 0;border:0;clear:both}
+a{color:#333;text-decoration:none}
+a:hover{color:#777}
+@font-face {font-family: 'FontAwesome';src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight: normal;font-style: normal;}
+.webchat-icon{display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
