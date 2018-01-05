@@ -26,3 +26,7 @@ a:hover{color:#777}
 .webchat-ico-about:before{content: "\f29c";}
 .webchat-ico-close:before{content: "\f057";}
 .webchat-ico-minimize:before{content: "\f056";}
+.webchat-ico-check:before{content: "\f00c";}
+.webchat-ico-circle:before{content: "\f111";}
+.webchat-ico-clock-o:before{content: "\f017";}
+.webchat-ico-angle-down:before{content: "\f107";}

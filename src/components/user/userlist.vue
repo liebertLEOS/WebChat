@@ -2,11 +2,11 @@
   <ul class="webchat-user-cate">
     <li>
       <h5 v-on:click="unfold = !unfold">
-        <i class="webchat-ico webchat-ico-angle-right"></i>
+        <i class="webchat-ico webchat-ico-angle-right" v-bind:class="[unfold ? 'down' : '']"></i>
         <span>{{ catename }}</span>
         <em>({{ userlist.length }})</em>
       </h5>
-      <ul class="webchat-dropbox webchat-main-user-list" v-show="unfold">
+      <ul class="webchat-main-user-list" v-show="unfold">
         <li v-for="user in userlist">
           <img src="../../assets/images/user.jpg">
           <span>{{ user.username }}</span>
