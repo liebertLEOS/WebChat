@@ -86,10 +86,10 @@
 ::-webkit-scrollbar-track{background-color: transparent;}
 ::-webkit-scrollbar-thumb:hover{background-color: #999;}
 .webchat-main{display:block;box-sizing:content-box;margin:30px auto;width:260px;height:520px;border:1px solid #d9d9d9;border-radius:2px;box-shadow:1px 1px 50px 10px rgba(0,0,0,0.15);color:#666}
-.webchat-main-drag{height:15px;padding:0 50px;background-color:#fff;}
-.webchat-main-info{height:54px;padding:0 15px;background-color:#fff;font-size:14px;}
-.webchat-main-info .webchat-user{display:inline-block;max-width:150px;margin-right:16px;font-size:16px;}
-.webchat-main-info .webchat-status{position:relative;display:inline-block;cursor:pointer}
+.webchat-main-drag{height:15px;padding:0 50px;background-color:#efefef;cursor:move}
+.webchat-main-info{height:54px;padding:0 15px;background-color:#efefef;font-size:14px;}
+.webchat-main-info .webchat-user{float:left;height:24px;line-height:24px;max-width:150px;margin-right:16px;font-size:16px;}
+.webchat-main-info .webchat-status{position:relative;float:left;height:24px;line-height:24px;cursor:pointer}
 .webchat-status-online{color:#3fdd86}
 .webchat-status-offline{color:#aaa}
 .webchat-status .webchat-dropbox{position: absolute;z-index: 100;top: 24px;left: -31px;padding: 5px 0;width: 85px;border: 1px solid #E2E2E2;border-radius: 2px;background-color: #fff;box-shadow: 1px 1px 20px rgba(0,0,0,.1);}
@@ -101,12 +101,12 @@
 .webchat-remark{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
 .webchat-remark:focus{border: 1px solid #d2d2d2;border-color: rgba(0,0,0,.15);}
 .webchat-main-tab{height:415px;}
-.webchat-main-tab .webchat-tab-tt{height:50px;padding:10px;background-color:#fff}
+.webchat-main-tab .webchat-tab-tt{height:50px;padding:10px 0px;background-color:#efefef}
 .webchat-main-tab .webchat-tab-tt li{position:relative;display:block;float:left;height:30px;line-height:30px;width:33.333%;text-align:center;cursor:pointer;}
 .webchat-main-tab .webchat-tab-tt li>i{font-size:22px;}
 .webchat-main-tab .webchat-tab-tt li:hover i{color:#777;}
 .webchat-main-tab .webchat-tab-ct{height:365px;padding:10px;background-color:rgba(255,255,255,0.8);overflow-x:hidden;overflow-y:scroll;}
-.webchat-main-tab .webchat-tab-tt .webchat-tab-focus:after{content: '';position: absolute;left: 0;bottom: -9px;width: 100%;height: 3px;background-color: #dd691d;}
+.webchat-main-tab .webchat-tab-tt .webchat-tab-focus:after{content: '';position: absolute;left: 0;bottom: -10px;width: 100%;height: 1px;background-color: #dd691d;}
 .webchat-tab-unselect{display:none;}
 .webchat-tab-select{display:block;}
 .webchat-main-user {}
