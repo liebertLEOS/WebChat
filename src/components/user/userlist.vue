@@ -2,7 +2,7 @@
   <ul class="webchat-user-cate">
     <li>
       <h5 v-on:click="unfold = !unfold">
-        <i class="webchat-icon webchat-icon-angle-right"></i>
+        <i class="webchat-ico webchat-ico-angle-right"></i>
         <span>{{ catename }}</span>
         <em>({{ userlist.length }})</em>
       </h5>

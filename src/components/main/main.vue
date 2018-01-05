@@ -83,9 +83,9 @@
 
 <style>
 ::-webkit-scrollbar{width: 6px;height: 6px;}
-::-webkit-scrollbar-thumb{border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;background-color: #c3c3c3;}
-::-webkit-scrollbar-track{background-color: transparent;}
-::-webkit-scrollbar-thumb:hover{background-color: #999;}
+::-webkit-scrollbar-thumb{border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;background-color: #bbb;}
+::-webkit-scrollbar-track{background-color: #f2f2f2;}
+::-webkit-scrollbar-thumb:hover{background-color: #666;}
 .webchat-main{position:relative;display:block;box-sizing:content-box;margin:30px auto;width:260px;height:520px;border:1px solid #d9d9d9;border-radius:2px;box-shadow:1px 1px 50px 10px rgba(0,0,0,0.15);color:#666}
 .webchat-main-drag{height:15px;padding:0 50px;background-color:#efefef;cursor:move}
 .webchat-main-info{height:54px;padding:0 15px;background-color:#efefef;font-size:14px;}
@@ -106,18 +106,21 @@
 .webchat-main-tab .webchat-tab-tt li{position:relative;display:block;float:left;height:30px;line-height:30px;width:33.333%;text-align:center;cursor:pointer;}
 .webchat-main-tab .webchat-tab-tt li>i{font-size:22px;}
 .webchat-main-tab .webchat-tab-tt li:hover i{color:#777;}
-.webchat-main-tab .webchat-tab-ct{height:365px;padding:10px;background-color:rgba(255,255,255,0.8);overflow-x:hidden;overflow-y:scroll;}
+.webchat-main-tab .webchat-tab-ct{height:365px;padding:10px 0px;background-color:rgba(255,255,255,0.8);overflow:hidden;}
+.webchat-main-tab .webchat-tab-ct:hover{overflow-y:auto;}
 .webchat-main-tab .webchat-tab-tt .webchat-tab-focus:after{content: '';position: absolute;left: 0;bottom: -10px;width: 100%;height: 1px;background-color: #dd691d;}
 .webchat-tab-unselect{display:none;}
 .webchat-tab-select{display:block;}
 .webchat-main-user {}
 .webchat-user-cate{position:relative}
-.webchat-user-cate h5{height:25px;line-height:25px;cursor:pointer;}
+.webchat-user-cate h5{height:28px;line-height:28px;padding-left:25px;cursor:pointer;}
 .webchat-user-cate h5:hover{color:#000;}
+.webchat-user-cate h5>span{height:28px;line-height:28px;}
 .webchat-user-cate h5>em{font-style:normal;color:#999}
-.webchat-user-cate .webchat-ico{font-size: 20px;color:#999}
+.webchat-user-cate .webchat-ico{height:28px;line-height:28px;font-size:20px;margin-right:5px;color:#999}
 .webchat-user-cate .webchat-dropbox{width:100%}
 .webchat-user-cate .webchat-dropbox li{position:relative;height: 52px;padding:5px 15px 5px 60px;}
+.webchat-user-cate .webchat-dropbox li:hover{background:#f2f2f2;cursor:pointer;}
 .webchat-user-cate .webchat-dropbox li>img{position: absolute;left:15px;top:8px;width:36px;height:36px;border-radius:50%;}
 .webchat-user-cate .webchat-dropbox li>p{color:#999;font-size:12px;}
 .webchat-main-tool{padding:0 10px;height:36px;background:#efefef}
