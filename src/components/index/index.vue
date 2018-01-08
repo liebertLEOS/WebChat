@@ -237,6 +237,7 @@
 </script>
 
 <style lang="scss">
+.webchat-chat
 .webchat-chat-win{position:absolute;width:802px;height:545px;left:0;top:0;border:1px solid #ddd;background:#fff;box-shadow: 1px 1px 50px 1px #ddd;z-index:1001}
 .webchat-win-hd{height:24px;line-height:25px;padding:0 5px;background:#efefef;cursor:move;}
 .webchat-win-hd .webchat-tt{font-size:10px;}
@@ -246,7 +247,7 @@
 .webchat-ico-minimize:hover{color:#67f30f;}
 .webchat-win-set .webchat-ico-close{color:#ff5555;}
 .webchat-ico-close:hover{color:#ff1010;}
-.webchat-win-min{position:absolute;bottom:10px;left:10px;height:28px;width:240px;line-height:28px;padding:0 5px;background:#efefef;cursor:move;}
+.webchat-win-min{position:absolute;bottom:10px;left:10px;height:30px;width:240px;line-height:30px;padding:0 5px;border:1px solid #ccc;box-sizing:content-box;background:#efefef;cursor:move;z-index:1001}
 .webchat-win-min .webchat-tt{font-size:10px;}
 .webchat-win-min-drag{cursor:move;}
 .webchat-chat-win .webchat-tab-tt{float:left;width:200px;height:520px;background-color:#2e3238;overflow:hidden;}
