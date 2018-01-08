@@ -13,6 +13,8 @@ button,input,optgroup,option,select,textarea{font-family:inherit;font-size:inher
 hr{height:1px;margin:10px 0;border:0;clear:both}
 a{color:#333;text-decoration:none}
 a:hover{color:#777}
+.clearfix{zoom:1;}
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 @font-face {font-family: 'FontAwesome';src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight: normal;font-style: normal;}
 .webchat-ico{display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 .webchat-ico-angle-right:before{content: "\f105";}
@@ -23,10 +25,17 @@ a:hover{color:#777}
 .webchat-ico-bell:before{content: "\f0f3";}
 .webchat-ico-add:before{content: "\f234";}
 .webchat-ico-skin:before{content: "\f1a5";}
+.webchat-ico-cog:before{content: "\f013";}
 .webchat-ico-about:before{content: "\f29c";}
 .webchat-ico-close:before{content: "\f057";}
 .webchat-ico-minimize:before{content: "\f056";}
+.webchat-ico-maximize:before{content: "\f2d2";}
 .webchat-ico-check:before{content: "\f00c";}
 .webchat-ico-circle:before{content: "\f111";}
 .webchat-ico-clock-o:before{content: "\f017";}
 .webchat-ico-angle-down:before{content: "\f107";}
+.webchat-ico-pic:before{content: "\f03e";}
+.webchat-ico-folder-o:before{content: "\f114";}
+.webchat-ico-smile-o:before{content: "\f118";}
+.webchat-ico-caret-down:before{content: "\f0d7";}
+.webchat-ico-safari:before{content: "\f267";}
