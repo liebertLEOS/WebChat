@@ -1,13 +1,12 @@
 <template>
 	<div class="webchat-index">
 
-    <div class="webchat-chat" v-if="chatWindowStatus > 0">
-      <div class="webchat-chat-win" v-drag="'webchat-win-hd'" v-show="chatWindowStatus == 1">
+    <transition name="scale-fade">
+      <div class="webchat-chat-win" v-bind:class="{'with-list': userlist.length > 1}" v-drag="'webchat-win-hd'" v-if="chatWindowStatus">
         <div class="webchat-win-hd">
           <span class="webchat-ico webchat-ico-safari"></span>
-          <span class="webchat-tt">{{winTitle}}</span>
+          <span class="webchat-tt">与{{userlist[current].name}}聊天中</span>
           <span class="webchat-win-set">
-            <a class="webchat-ico webchat-ico-minimize" href="javascript:;" v-on:click.stop="chatWindowStatus = 2"></a>
             <a class="webchat-ico webchat-ico-close" href="javascript:;" v-on:click.stop="chatWindowStatus = 0"></a>
           </span>
         </div>
@@ -53,20 +52,10 @@
           </ul>
         </div>
       </div>
-      <div class="webchat-win-min" v-show="chatWindowStatus == 2" v-drag="'webchat-win-min-drag'">
-        <div class="webchat-win-min-drag">
-          <span class="webchat-ico webchat-ico-safari"></span>
-          <span class="webchat-tt">{{winTitle}}</span>
-          <span class="webchat-win-set">
-            <a class="webchat-ico webchat-ico-maximize" href="javascript:;" v-on:click.stop="chatWindowStatus = 1"></a>
-            <a class="webchat-ico webchat-ico-close" href="javascript:;" v-on:click.stop="chatWindowStatus = 0"></a>
-          </span>
-        </div>
-      </div>
-    </div>
+    </transition>
 
-		<div class="webchat-maincontainer">
-      <div class="webchat-main" v-on:click.stop="statusMenu = false" v-show="showMain">
+		<div class="webchat-container-main">
+      <div class="webchat-main-win" v-on:click.stop="statusMenu = false" v-show="showMain">
         <div class="webchat-main-drag">&#8203;</div>
         <div class="webchat-main-info">
           <div class="webchat-user">李伯特</div>
@@ -183,7 +172,6 @@
     methods: {
       async initData () {
         this.userCateList = getUserCateList()
-        console.log(this.userCateList)
       },
       removeUser: function (index) {
         if (index <= this.current) {
@@ -237,26 +225,24 @@
 </script>
 
 <style lang="scss">
-.webchat-chat
-.webchat-chat-win{position:absolute;width:802px;height:545px;left:0;top:0;border:1px solid #ddd;background:#fff;box-shadow: 1px 1px 50px 1px #ddd;z-index:1001}
+.webchat-chat-win{position:absolute;width:602px;height:522px;right:300px;bottom:0px;border:1px solid #ddd;background:#fff;box-shadow: 1px 1px 50px 1px #ddd;z-index:1001}
+.webchat-chat-win.with-list{width:802px;}
 .webchat-win-hd{height:24px;line-height:25px;padding:0 5px;background:#efefef;cursor:move;}
 .webchat-win-hd .webchat-tt{font-size:10px;}
-.webchat-win-set{float:right;}
+.webchat-win-set{float:right;font-size:16px;}
 .webchat-win-set a{margin-left:3px;}
-.webchat-win-set .webchat-ico-minimize{color:#89ec4a;}
-.webchat-ico-minimize:hover{color:#67f30f;}
 .webchat-win-set .webchat-ico-close{color:#ff5555;}
 .webchat-ico-close:hover{color:#ff1010;}
 .webchat-win-min{position:absolute;bottom:10px;left:10px;height:30px;width:240px;line-height:30px;padding:0 5px;border:1px solid #ccc;box-sizing:content-box;background:#efefef;cursor:move;z-index:1001}
 .webchat-win-min .webchat-tt{font-size:10px;}
 .webchat-win-min-drag{cursor:move;}
-.webchat-chat-win .webchat-tab-tt{float:left;width:200px;height:520px;background-color:#2e3238;overflow:hidden;}
+.webchat-chat-win .webchat-tab-tt{float:left;width:200px;height:495px;background-color:#2e3238;overflow:hidden;}
 .webchat-chat-win .webchat-tab-tt:hover{overflow-y:auto}
 .webchat-chat-win .webchat-tab-tt::-webkit-scrollbar{width: 6px;height: 6px;}
 .webchat-chat-win .webchat-tab-tt::-webkit-scrollbar-thumb{border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;background-color: #bbb;}
 .webchat-chat-win .webchat-tab-tt::-webkit-scrollbar-track{background-color: #f2f2f2;}
 .webchat-chat-win .webchat-tab-tt::-webkit-scrollbar-thumb:hover{background-color: #666;}
-.webchat-chat-win .webchat-tab-ct{float:left;width:600px;height:100%;}
+.webchat-chat-win .webchat-tab-ct{float:left;display:block;width:600px;}
 .webchat-chat-win .webchat-tab-tt >li{padding:10px;height:60px;color:#fff;font-size:16px;border-bottom: 1px solid #292c33;cursor:pointer;}
 .webchat-chat-win .webchat-tab-tt >li:hover{background:#3a3f45;}
 .webchat-chat-win .webchat-tab-tt >li.focus{background:#3a3f45;}
@@ -264,25 +250,24 @@
 .webchat-chat-win .webchat-tab-tt >li i{display:none;float:right;color:#aaa;margin-right:10px;line-height:40px;font-size:22px;cursor:pointer;}
 .webchat-chat-win .webchat-tab-tt >li:hover i{display:inherit;}
 .webchat-chat-win .webchat-tab-tt >li i:hover{color:#fff;}
-.webchat-chat-win .webchat-tab-ct >li{height:100%;width:100%;display:block;}
-.webchat-chat-win .webchat-chat-hd{display:inline-block;height:80px;}
-.webchat-chat-win .webchat-chat-hd *{cursor:default;}
+.webchat-chat-win .webchat-tab-ct >li{float:left;height:100%;width:100%;display:block;}
+.webchat-chat-win .webchat-chat-hd{height:80px;border-bottom:1px solid #ddd}
 .webchat-chat-win .webchat-tab-ct .webchat-chat-userinfo{position:relative;padding-left:80px;display:inline-block;}
 .webchat-chat-win .webchat-tab-ct .webchat-chat-userinfo img{position:absolute;top:10px;left:10px;width:60px;border-radius:50%}
 .webchat-chat-win .webchat-tab-ct .webchat-chat-userinfo .webchat-userinfo-name{height:40px;line-height:50px;font-size:18px;}
 .webchat-chat-win .webchat-tab-ct .webchat-chat-userinfo .webchat-userinfo-status{height:40px;line-height:30px;font-size:14px;}
-.webchat-chat-win .webchat-chat-bd{overflow-y: auto;overflow-x:hidden;height:auto;height:280px;padding:15px;}
+.webchat-chat-win .webchat-chat-bd{overflow-y: auto;overflow-x:hidden;height:auto;height:257px;padding:15px;}
 .webchat-chat-win .webchat-chat-ft{height:158px;border-top:1px solid #efefef;}
 .webchat-chat-win .webchat-chat-ft .webchat-chat-tools{height:40px;}
 .webchat-chat-win .webchat-chat-ft .webchat-chat-tools li{height:40px;line-height:40px;margin:0 10px;font-size:24px;cursor:pointer;}
-.webchat-chat-win .webchat-chat-ft .webchat-chat-textarea textarea{display:block;width:100%;padding:5px00;height:75px;line-height:20px;border:none;overflow:auto;resize:none;background: 0 0;}
+.webchat-chat-win .webchat-chat-ft .webchat-chat-textarea textarea{display:block;width:100%;padding:5px;height:75px;line-height:20px;border:none;overflow:auto;resize:none;background: 0 0;}
 .webchat-chat-win .webchat-chat-op{text-align:right;padding:0 20px;}
 .webchat-chat-win .webchat-chat-op span{display: inline-block;font-size: 14px;line-height: 32px;margin-left: 5px;padding: 0 20px;background-color: #1db93e;color: #fff;border-radius: 3px;}
 .webchat-chat-win .webchat-chat-op .webchat-send-btn{border-radius:3px 0 0 3px}
 .webchat-chat-win .webchat-chat-op .webchat-send-set{margin-left:-3px;border-radius:0 3px 3px 0;padding: 0 10px;}
 .webchat-color-success{color:#1db93e}
 $main-color: #eee;
-.webchat-main{position:fixed;bottom:0px;right:3px;display:block;box-sizing:content-box;width:260px;height:520px;border:1px solid #d9d9d9;border-radius:2px;box-shadow:1px 1px 50px 10px rgba(0,0,0,0.15);color:#666}
+.webchat-main-win{position:fixed;bottom:0px;right:3px;display:block;box-sizing:content-box;width:260px;height:520px;border:1px solid #d9d9d9;border-radius:2px;box-shadow:1px 1px 50px 10px rgba(0,0,0,0.15);color:#666}
 .webchat-main-drag{height:15px;padding:0 50px;background-color:$main-color;cursor:move}
 .webchat-main-info{height:54px;padding:0 15px;background-color:$main-color;font-size:14px;}
 .webchat-main-info .webchat-user{float:left;height:24px;line-height:24px;max-width:150px;margin-right:16px;font-size:16px;}
@@ -341,11 +326,14 @@ $main-color: #eee;
 .webchat-main-setwin .webchat-ico-minimize:hover{color:#67f30f;}
 .webchat-main-setwin .webchat-ico-close{color:#ff5555;}
 .webchat-main-setwin .webchat-ico-close:hover{color:#ff1010;}
-.slide-fade-enter-active {transition: all .2s ease;}
-.slide-fade-leave-active {transition: all .2s ease;}
-/*.slide-fade-enter{transform: translateX(100px);opacity: 0;}*/
-.slide-fade-enter, .slide-fade-leave-to{transform: translateX(-100px);opacity: 0;}
 .webchat-main-min{position:fixed;bottom:0;right:0;z-index:1000;padding:5px;border:1px solid #ccc;background-color:#efefef}
 .webchat-main-min .webchat-min-userinfo{width:45px;height:45px;border-radius:50%;overflow:hidden;cursor:pointer}
 .webchat-main-min .webchat-min-userinfo img{width:100%;height:100%;}
+.slide-fade-enter-active,.slide-fade-leave-active,
+.scale-fade-enter-active,.scale-fade-leave-active,
+.fade-to-left-bottom-enter-active,.fade-to-left-bottom-leave-active
+{transition: all .2s ease;}
+/*.slide-fade-enter{transform: translateX(100px);opacity: 0;}*/
+.slide-fade-enter,.slide-fade-leave-to{transform:translateX(-100px);opacity: 0;}
+.scale-fade-enter,.scale-fade-leave-to{transform:scale(0);}
 </style>

@@ -21,13 +21,16 @@ Vue.directive('drag', function (el, binding) {
 
       el.style.left = (left < 0 ? 0 : (left > maxLeft ? maxLeft : left)) + 'px'
       el.style.top = (top < 0 ? 0 : (top > maxTop ? maxTop : top)) + 'px'
+
+      return false
     }
 
     document.onmouseup = function (e) {
       document.onmousemove = null
       document.onmouseup = null
+      return false
     }
-    ev.stopPropagation()
+    return false
   }
 })
 
