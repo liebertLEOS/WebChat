@@ -225,8 +225,8 @@
 </script>
 
 <style lang="scss">
-.webchat-chat-win{position:absolute;width:602px;height:545px;right:300px;top:10px;border:1px solid #ddd;background:#fff;box-shadow: 1px 1px 50px 1px #ddd;z-index:1001}
-.webchat-chat-win.with-list{width:802px;}
+.webchat-chat-win{position:absolute;width:600px;height:545px;right:300px;top:10px;border:1px solid #ddd;background:#fff;box-shadow: 1px 1px 50px 1px #ddd;box-sizing:content-box;z-index:1001}
+.webchat-chat-win.with-list{width:800px;}
 .webchat-win-hd{height:24px;line-height:25px;padding:0 5px;background:#efefef;cursor:move;}
 .webchat-win-hd .webchat-tt{font-size:10px;}
 .webchat-win-set{float:right;font-size:16px;}
@@ -257,7 +257,7 @@
 .webchat-chat-win .webchat-tab-ct .webchat-chat-userinfo .webchat-userinfo-name{height:40px;line-height:50px;font-size:18px;}
 .webchat-chat-win .webchat-tab-ct .webchat-chat-userinfo .webchat-userinfo-status{height:40px;line-height:30px;font-size:14px;}
 .webchat-chat-win .webchat-chat-bd{overflow-y: auto;overflow-x:hidden;height:auto;height:280px;padding:5px;}
-.webchat-chat-win .webchat-chat-ft{height:160px;border-top:1px solid #efefef;}
+.webchat-chat-win .webchat-chat-ft{border-top:1px solid #efefef;}
 .webchat-chat-win .webchat-chat-ft .webchat-chat-tools{height:40px;}
 .webchat-chat-win .webchat-chat-ft .webchat-chat-tools li{height:40px;line-height:40px;margin:0 10px;font-size:24px;cursor:pointer;}
 .webchat-chat-win .webchat-chat-ft .webchat-chat-textarea textarea{display:block;width:100%;padding:5px;height:75px;line-height:20px;border:none;overflow:auto;resize:none;background: 0 0;}
