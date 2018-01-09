@@ -6,7 +6,7 @@
       <em>({{ userlist.length }})</em>
     </h5>
     <ul class="webchat-main-user-list" v-show="unfold">
-      <li v-for="user in userlist" @click="addChat(user)">
+      <li v-for="user in userlist" @click="addChat(user.id)">
         <img src="../../assets/images/user.jpg">
         <span>{{ user.name }}</span>
         <p>{{ user.remark }}</p>
@@ -31,7 +31,7 @@
       },
       addChat: function (user) {
         // this.ADD_CHAT(user)
-        this.$emit('adduser', user)
+        this.$emit('addchat', user)
       }
     },
     data () {

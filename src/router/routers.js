@@ -2,9 +2,7 @@ import app from '../App'
 
 const index = r => require.ensure([], () => r(require('../components/index/index')), 'index')
 const webchat = r => require.ensure([], () => r(require('../components/webChat')), 'webchat')
-const signin = r => require.ensure([], () => r(require('../components/signin/signIn')), 'signin')
-const main = r => require.ensure([], () => r(require('../components/main/main')), 'main')
-const chat = r => require.ensure([], () => r(require('../components/chat/chat')), 'chat')
+const login = r => require.ensure([], () => r(require('../components/login/login')), 'login')
 
 export default[{
   path: '/',
@@ -19,23 +17,14 @@ export default[{
       component: webchat
     },
     {
-      path: '/signin',
-      component: signin
-    },
-    // 右侧面板
-    {
-      path: '/main',
-      component: main
+      path: '/login',
+      component: login
     },
     // 主界面
     {
       path: '/index',
-      component: index
-    },
-    // 聊天页
-    {
-      path: '/chat/user/:user',
-      component: chat
+      component: index,
+      meta: { requiresAuth: true }
     }
   ]
 }]

@@ -39,6 +39,18 @@ const router = new VueRouter({
   strict: process.env.NODE_ENV !== 'production'
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    if (store.state.login) {
+      next()
+    } else {
+      next({path: '/login', query: {Rurl: to.fullPath}})
+    }
+  } else {
+    next()
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   router,
