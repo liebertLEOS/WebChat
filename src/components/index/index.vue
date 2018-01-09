@@ -229,10 +229,10 @@
 .webchat-chat-win .webchat-tab-tt::-webkit-scrollbar-thumb{border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;background-color: #bbb;}
 .webchat-chat-win .webchat-tab-tt::-webkit-scrollbar-track{background-color: #f2f2f2;}
 .webchat-chat-win .webchat-tab-tt::-webkit-scrollbar-thumb:hover{background-color: #666;}
-.webchat-chat-win .webchat-tab-tt >li{padding:10px;height:55px;color:#fff;font-size:16px;border-bottom: 1px solid #292c33;cursor:pointer;}
+.webchat-chat-win .webchat-tab-tt >li{padding:10px;height:55px;color:#fff;font-size:14px;border-bottom: 1px solid #292c33;cursor:pointer;}
 .webchat-chat-win .webchat-tab-tt >li.focus{background:#3a3f45;}
-.webchat-chat-win .webchat-tab-tt >li img{border-radius:50%;height:35px;width:40px;margin-right:10px;}
-.webchat-chat-win .webchat-tab-tt >li i{display:none;float:right;color:#aaa;margin-right:10px;line-height:35px;font-size:22px;cursor:pointer;}
+.webchat-chat-win .webchat-tab-tt >li img{border-radius:3px;height:35px;width:35px;margin-right:10px;}
+.webchat-chat-win .webchat-tab-tt >li i{display:none;float:right;color:#aaa;margin-right:10px;line-height:35px;font-size:22px;transition:color ease .2s;cursor:pointer;}
 .webchat-chat-win .webchat-tab-tt >li:hover i{display:inherit;}
 .webchat-chat-win .webchat-tab-tt >li i:hover{color:#fff;}
 .webchat-chat-win .webchat-tab-ct{position:relative;display:block;height:100%;overflow:hidden;}
